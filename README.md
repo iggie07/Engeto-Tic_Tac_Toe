@@ -1,1 +1,1 @@
-Tic_Tac_Toe is a second project created durind studyes Pyton Academy by engeto.
+Tic_Tac_Toe is a second project created durind studies Pyton Academy by Engeto.
