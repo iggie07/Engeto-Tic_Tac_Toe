@@ -11,12 +11,6 @@ board_spots = {1: "1", 2: "2", 3: "3",
                4: "4", 5: "5", 6: "6",
                7: "7", 8: "8", 9: "9"}
 
-# turn = 0
-# prev_turn = -1
-# play_game = True
-
-
-
 # Game board
 def printBoard(board_spots):
     print(board_spots[1] + " | " + board_spots[2] + " | " + board_spots[3])
@@ -116,7 +110,6 @@ if __name__ == "__main__":
         if choice == "q":
             print("Have a nice day :)")
             quit()
-            # play_game = False
         # Check correct input from user
         elif str.isdigit(choice) and int(choice) in board_spots:
             # Check if spot is available or is already occupied
