@@ -11,9 +11,9 @@ board_spots = {1: "1", 2: "2", 3: "3",
                4: "4", 5: "5", 6: "6",
                7: "7", 8: "8", 9: "9"}
 
-turn = 0
-prev_turn = -1
-play_game = True
+# turn = 0
+# prev_turn = -1
+# play_game = True
 
 
 
@@ -96,9 +96,11 @@ def check_draw():
 
 if __name__ == "__main__":
     print(logo)
+    turn = 0
+    prev_turn = -1
 
+    while True:
 
-    while play_game:
         os.system("cls" if os.name == "nt" else "clear")
         print(rules)
         printBoard(board_spots)
@@ -112,7 +114,9 @@ if __name__ == "__main__":
         # Input from player
         choice = input()
         if choice == "q":
-            play_game = False
+            print("Have a nice day :)")
+            quit()
+            # play_game = False
         # Check correct input from user
         elif str.isdigit(choice) and int(choice) in board_spots:
             # Check if spot is available or is already occupied
