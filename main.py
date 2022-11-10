@@ -11,6 +11,7 @@ board_spots = {1: "1", 2: "2", 3: "3",
                4: "4", 5: "5", 6: "6",
                7: "7", 8: "8", 9: "9"}
 
+
 # Game board
 def printBoard(board_spots):
     print(board_spots[1] + " | " + board_spots[2] + " | " + board_spots[3])
@@ -81,14 +82,15 @@ def check_win():
         quit()
 
 
-def check_draw():
+def check_draw(turn):
     if turn > 8 and not check_win():
         os.system("cls" if os.name == "nt" else "clear")
         printBoard(board_spots)
         print("\nThis is DRAW")
         quit()
 
-if __name__ == "__main__":
+
+def game():
     print(logo)
     turn = 0
     prev_turn = -1
@@ -108,7 +110,7 @@ if __name__ == "__main__":
         # Input from player
         choice = input()
         if choice == "q":
-            print("Have a nice day :)")
+            print("\nHave a nice day :)")
             quit()
         # Check correct input from user
         elif str.isdigit(choice) and int(choice) in board_spots:
@@ -119,5 +121,8 @@ if __name__ == "__main__":
                 board_spots[int(choice)] = check_turn(turn)
         # Check for win or draw
         check_win()
-        check_draw()
+        check_draw(turn)
 
+
+if __name__ == "__main__":
+    game()
